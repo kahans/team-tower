@@ -26,8 +26,6 @@ public class MemberServiceImpl implements MemberService{
 	public String memberLogin(Member member) {
 		// TODO Auto-generated method stub
 		
-		
-		
 		return memberDao.memberLoginCheck(member);
 	}
 
