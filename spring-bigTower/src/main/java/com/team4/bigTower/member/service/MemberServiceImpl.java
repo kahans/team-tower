@@ -3,6 +3,8 @@ package com.team4.bigTower.member.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.team4.bigTower.member.controller.MemberDao;
+
 @Service
 public class MemberServiceImpl implements MemberService{
 /*	요구사항 끝나면 설계 다음주 수요일

@@ -7,6 +7,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.team4.bigTower.board.controller.BoardDao;
+
 @Service
 public class BoardServiceImpl implements BoardService {
 
@@ -45,6 +47,12 @@ public class BoardServiceImpl implements BoardService {
 		
 		
 		return mapList;
+	}
+
+	@Override
+	public int boardAdd(Board board) {
+		// TODO Auto-generated method stub
+		return boardDao.boardAdd(board);
 	}
 
 }

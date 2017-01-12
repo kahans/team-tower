@@ -1,0 +1,17 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="files">
+	<insert id="fileAdd" parameterType="com.team4.bigTower.file.service.Files">
+		INSERT INTO file(
+			f_name,
+			f_path,
+			b_no
+		) VALUES(
+			#{fileName},
+			#{fileAuth},
+			#{bNo}
+		)
+	</insert>
+</mapper>

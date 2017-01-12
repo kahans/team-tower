@@ -2,13 +2,13 @@ package com.team4.bigTower.file.service;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class FileCommand {
+public class FilesCommand {
 	private String fileName;
 	private String fileAuth;
 	private MultipartFile multipartFile;
 	
 	
-	public FileCommand() {
+	public FilesCommand() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

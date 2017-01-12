@@ -22,4 +22,19 @@
 		ORDER BY b_date DESC
 		LIMIT #{beginPage},#{perPage}			
 	</select>
+	<insert id="boardAdd" parameterType="com.team4.bigTower.board.service.Board">
+		INSERT INTO board(
+			b_title,
+			b_content,
+			m_id,
+			b_pw,
+			b_date			
+		)VALUES(
+			#{bTitle},
+			#{bContent},
+			#{mId},
+			#{bPw},
+			#{bDate}			
+		)
+	</insert>
 </mapper>

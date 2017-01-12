@@ -1,8 +1,10 @@
-package com.team4.bigTower.member.service;
+package com.team4.bigTower.member.controller;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.team4.bigTower.member.service.Member;
 
 @Repository
 public class MemberDaoImpl implements MemberDao{

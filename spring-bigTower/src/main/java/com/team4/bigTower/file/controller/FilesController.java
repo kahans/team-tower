@@ -7,22 +7,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.team4.bigTower.file.service.FileCommand;
-import com.team4.bigTower.file.service.FileService;
+import com.team4.bigTower.file.service.FilesCommand;
+import com.team4.bigTower.file.service.FilesService;
 
 @Controller
-public class FileController {
-	private static final Logger logger = LoggerFactory.getLogger(FileController.class);
+public class FilesController {
+	private static final Logger logger = LoggerFactory.getLogger(FilesController.class);
 	@Autowired
-	private FileService fileService;
+	private FilesService fileService;
 	@RequestMapping(value="/fileUpload", method=RequestMethod.GET)
 	public String FileUpload(){
 		
 		return "/file/fileUpload";		
 	}
 	@RequestMapping(value="/fileUpload", method=RequestMethod.POST)
-	public String FileUpload(FileCommand fileCommand){
+	public String FileUpload(FilesCommand fileCommand){
 		logger.debug(fileCommand.toString());
+		
 		fileService.fileAdd(fileCommand);
 		
 		return "redirect:/";		

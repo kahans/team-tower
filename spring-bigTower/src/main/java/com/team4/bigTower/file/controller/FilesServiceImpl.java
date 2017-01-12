@@ -1,26 +1,32 @@
-package com.team4.bigTower.file.service;
+package com.team4.bigTower.file.controller;
 
 import java.io.File;
 import java.io.IOException;
+
 import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.team4.bigTower.board.service.Board;
+import com.team4.bigTower.file.service.FilesCommand;
+import com.team4.bigTower.file.service.FilesService;
+import com.team4.bigTower.file.service.Files;
 
-@Service
-public class FileService {
-	private static final Logger logger = LoggerFactory.getLogger(FileService.class);
+public class FilesServiceImpl implements FilesService {
 
-	public int fileAdd(FileCommand fileCommand){
+	private static final Logger logger = LoggerFactory.getLogger(FilesServiceImpl.class);
+	@Override
+	public int fileAdd(FilesCommand fileCommand) {
 		String path="";
 		String fileName="";
 		File destFile =null;
 		String extention ="";
 		
 		MultipartFile multipartFile = fileCommand.getMultipartFile();
+		Files files = new Files();
+		Board board = new Board();
 		logger.info(fileCommand.toString());
 		logger.debug(fileCommand.toString());
 		try {
@@ -37,12 +43,14 @@ public class FileService {
 			multipartFile.transferTo(destFile);
 			
 			//2 FileBoardCommand -> fileBoard -> DAO 
-			Files files = new Files();
+			//Files files = new Files();
 			files.setfTitle(fileCommand.getfileName());
 			files.setfAuth(fileCommand.getfileAuth());
 			files.setfPath(path);
 			files.setfName(fileName);
-			files.setExtention(extention);
+			files.setbNo(board.getbNo());
+			//files.setExtention(extention);
+			
 			
 			logger.info("{} : ", files.toString());
 			logger.debug("{} : ", files.toString());

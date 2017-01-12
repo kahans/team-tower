@@ -24,7 +24,7 @@
             <list>
                 <value>classpath:com/team4/bigTower/member/service/memberMapper.xml</value>
             	<value>classpath:com/team4/bigTower/board/service/BoardMapper.xml</value>
-            	
+            	<value>classpath:com/team4/bigTower/file/service/FilesMapper.xml</value>
             </list>
         </property>
     </bean>

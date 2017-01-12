@@ -1,4 +1,4 @@
-package com.team4.bigTower.board.service;
+package com.team4.bigTower.board.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -6,6 +6,8 @@ import java.util.Map;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.team4.bigTower.board.service.Board;
 
 @Repository
 public class BoardDaoImpl implements BoardDao{
@@ -24,6 +26,11 @@ public class BoardDaoImpl implements BoardDao{
 	public List<Board> boardList(Map<String, Integer> map) {
 		// TODO Auto-generated method stub
 		return sqlSession.selectList(BOARD_NS+"boardList", map);
+	}
+	@Override
+	public int boardAdd(Board board) {
+		// TODO Auto-generated method stub
+		return sqlSession.insert(BOARD_NS+"boardAdd", board);
 	}
 	
 	 
