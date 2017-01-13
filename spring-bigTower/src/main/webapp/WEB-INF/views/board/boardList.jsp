@@ -8,6 +8,9 @@
 <title>글 목록</title>
 </head>
 <body>
+	<div>
+		<a href="<c:url value='/boardAdd'/>">글작성</a>	
+	</div>
 	<table border="1">
 		<tr>
 			<th>글번호</th>
@@ -26,6 +29,7 @@
 			
 			</tr>
 		</c:forEach>
+		
 	</table>
 </body>
 </html>

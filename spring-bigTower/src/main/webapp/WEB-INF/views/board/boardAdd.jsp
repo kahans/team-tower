@@ -8,7 +8,7 @@
 <title>글 작성</title>
 </head>
 <body>
-<form action="<c:url value='/boardrAdd'/>" method="post" enctype="multipart/form-data">
+<form action="<c:url value='/boardAdd'/>" method="post" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<th align="left">TITLE</th>

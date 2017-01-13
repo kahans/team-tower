@@ -14,7 +14,7 @@ import com.team4.bigTower.file.service.FilesService;
 public class FilesController {
 	private static final Logger logger = LoggerFactory.getLogger(FilesController.class);
 	@Autowired
-	private FilesService fileService;
+	private FilesService filesService;
 	@RequestMapping(value="/fileUpload", method=RequestMethod.GET)
 	public String FileUpload(){
 		
@@ -24,8 +24,8 @@ public class FilesController {
 	public String FileUpload(FilesCommand fileCommand){
 		logger.debug(fileCommand.toString());
 		
-		fileService.fileAdd(fileCommand);
+		filesService.fileAdd(fileCommand);
 		
-		return "redirect:/";		
+		return "redirect:/boardList";		
 	}
 }

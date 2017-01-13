@@ -25,7 +25,7 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	@Autowired
-	private FilesService fileService;
+	private FilesService filesService;
 	
 	@RequestMapping(value="/boardList")
 	public String boardList(Model model,
@@ -46,9 +46,11 @@ public class BoardController {
 	@RequestMapping(value="/boardAdd", method=RequestMethod.POST)
 	public String boardAdd(Board board, FilesCommand filesCommand){
 		//boardService로 보내서 file 까지 테이블에  저장하게 한다.
-		logger.debug("dedug : ", filesCommand);
+		logger.info("info : ", filesCommand.toString());
+		logger.info(board.toString());
 		boardService.boardAdd(board);
-		fileService.fileAdd(filesCommand);
+		filesService.fileAdd(filesCommand);
+		logger.debug("files", filesCommand);
 		
 		return "redirect:/boardList";
 		
